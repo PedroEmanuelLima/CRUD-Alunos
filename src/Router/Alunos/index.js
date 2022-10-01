@@ -10,7 +10,7 @@ AlunoRouter.get('/allAlunos', async (req, res) => {
     }
 });
 
-AlunoRouter.get('/aluno/:id', async (req, res) => {
+AlunoRouter.get('/aluno/:email', async (req, res) => {
     try {
         const result = await Aluno.findOne({email: req.params.email});
         res.status(200).json(result);
