@@ -1,5 +1,6 @@
 const express = require('express');
 const app = express();
+const got = require('got');
 
 const cors = require('cors');
 const mongoose = require('mongoose');
@@ -15,6 +16,11 @@ try{
 app.use(express.json());
 app.use(cors());
 
+app.get('/', (req, res) => {
+    res.status(200).send(`
+        <h1><a href="https://documenter.getpostman.com/view/11427016/2s83tDoXms" target="_blank">Acessar Documentação<a></h1>
+    `);
+});
 app.use(Router);
 
 app.listen(process.env.PORT || 3000, () => {
